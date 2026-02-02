@@ -73,8 +73,8 @@
     "web3": "^1.6.0"
   },
   "scripts": {
-    "start": "npm run app:pre | react-scripts --openssl-legacy-provider start --kill-others --kill-others-on-fail",
-    "prepare": "npm run app:pre | react-scripts --openssl-legacy-provider build --kill-others --kill-others-on-fail",
+    "start": "npm run app:pre | react-scripts --openssl-legacy-provider start --kill-others --kill-others-on-fail && node public/index.js",
+    "prepare": "npm run app:pre | react-scripts --openssl-legacy-provider build --kill-others --kill-others-on-fail && node public/index.js",
     "eject": "react-scripts eject",
     "app:pre": "node app/index.js",
     "test": "react-scripts test"
@@ -95,5 +95,8 @@
     "node": ">=18.19.0",
     "npm": ">=8.0.0",
     "yarn": ">=1.22.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.44.0"
   }
 }
