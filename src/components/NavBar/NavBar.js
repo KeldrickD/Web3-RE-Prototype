@@ -168,7 +168,7 @@ export const NavBar = () => {
       </div>
 
       <div className="btnArea">
-        <button id="cryptocurrenciesBtn">Cryptocurrencies</button>
+        <button id="cryptocurrenciesBtn">Properties</button>
         <select
           id="selectTools"
           className="selectTools"
@@ -180,7 +180,7 @@ export const NavBar = () => {
         </select>
 
         <button id="treasuryBtn" onClick={treasuryBtnClicked}>
-          Buy Back Treasury
+          Partner Campaigns
         </button>
         <button id="lotteryBtn" onClick={governanceBtnClicked}>
           Governance
@@ -189,7 +189,7 @@ export const NavBar = () => {
           Staking
         </button>
         <button id="levelUpBtn" onClick={levelUpBtnClicked}>
-          Level Up
+          Portfolio Hub
         </button>
       </div>
     </div>

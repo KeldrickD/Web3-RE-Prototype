@@ -6,45 +6,49 @@
 }
 
 .realEstateHero {
-  margin: 16px auto 0;
+  margin: 12px auto 0;
   max-width: 1280px;
-  width: calc(100% - 32px);
+  width: calc(100% - 24px);
   border-radius: 18px;
-  padding: 28px;
-  border: 1px solid rgba(123, 64, 146, 0.8);
-  background: linear-gradient(135deg, rgba(14, 6, 20, 0.95), rgba(42, 12, 63, 0.9));
-  color: #fff;
+  padding: 30px;
+  border: 1px solid rgba(88, 124, 181, 0.45);
+  background:
+    linear-gradient(120deg, rgba(16, 31, 56, 0.95), rgba(21, 43, 73, 0.94)),
+    url("../../assets/img/bg.png");
+  background-size: cover;
+  color: #f2f6fd;
   display: grid;
-  gap: 24px;
+  gap: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .realEstateHero h1 {
   margin: 0 0 8px;
-  font-size: 2rem;
+  font-size: clamp(1.65rem, 2.2vw, 2.35rem);
 }
 
 .realEstateHero p {
   margin: 0;
-  color: #d9c9e8;
-  max-width: 760px;
+  color: #bdd0ea;
+  max-width: 780px;
 }
 
 .heroStats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  grid-template-columns: repeat(3, minmax(130px, 1fr));
   gap: 12px;
 }
 
 .heroStats div {
   border-radius: 12px;
-  border: 1px solid rgba(173, 105, 218, 0.5);
-  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(106, 145, 201, 0.45);
+  background: rgba(15, 29, 50, 0.72);
   padding: 12px;
 }
 
 .heroStats span {
   display: block;
-  color: #d9c9e8;
+  color: #afc4e4;
   font-size: 0.8rem;
 }
 
@@ -61,12 +65,15 @@
 .headerImgDiv img {
   width: 100%;
   max-width: 1280px;
-  height: 200px;
+  border-radius: 14px;
+  border: 1px solid rgba(84, 118, 171, 0.45);
+  height: 190px;
+  object-fit: cover;
 }
 
 .opportunitiesGrid {
   max-width: 1280px;
-  width: calc(100% - 32px);
+  width: calc(100% - 24px);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(220px, 1fr));
@@ -74,11 +81,11 @@
 }
 
 .opportunityCard {
-  border: 1px solid rgba(123, 64, 146, 0.8);
+  border: 1px solid rgba(87, 122, 178, 0.5);
   border-radius: 14px;
-  background: rgba(20, 8, 29, 0.9);
+  background: linear-gradient(150deg, rgba(16, 30, 55, 0.92), rgba(21, 39, 69, 0.9));
   padding: 14px;
-  color: #fff;
+  color: #f6f9ff;
 }
 
 .opportunityCard h3 {
@@ -88,14 +95,14 @@
 
 .opportunityCard p {
   margin: 0 0 10px;
-  color: #d9c9e8;
+  color: #aec3e3;
 }
 
 .opportunityMeta {
   display: flex;
   justify-content: space-between;
   font-size: 0.9rem;
-  color: #8df4d8;
+  color: #74e2be;
 }
 
 .bannerAreaDiv {
@@ -103,6 +110,7 @@
   flex-direction: row;
   text-align: center;
   justify-content: space-between;
+  gap: 12px;
 }
 
 .banner1Div,
@@ -120,19 +128,17 @@
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(91, 124, 178, 0.45);
   transition: opacity 3s ease-in-out;
 }
 
 @keyframes bannerFadeInOut {
-  0% {
-    opacity: 1;
-  }
+  0%,
   45% {
     opacity: 1;
   }
-  55% {
-    opacity: 0;
-  }
+  55%,
   100% {
     opacity: 0;
   }
@@ -141,16 +147,12 @@
 .banner1Div img.second,
 .banner2Div img.second,
 .banner3Div img.second {
-  animation-name: bannerFadeInOut;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 4s;
-  animation-direction: alternate;
+  animation: bannerFadeInOut 4s ease-in-out infinite alternate;
 }
 
 .promotedCoinDiv,
 .allCoinDiv {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 @media only screen and (max-width: 900px) {

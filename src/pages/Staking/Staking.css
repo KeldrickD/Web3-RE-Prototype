@@ -1,10 +1,10 @@
 .staking-page {
-  color: #fff;
+  color: #eaf2ff;
   padding: 32px 24px 64px;
 }
 
 .staking-hero {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto 24px;
   text-align: center;
 }
@@ -14,11 +14,11 @@
 }
 
 .staking-card {
-  background: rgba(22, 8, 27, 0.8);
-  border: 1px solid rgba(123, 64, 146, 0.8);
+  background: linear-gradient(145deg, rgba(14, 26, 48, 0.92), rgba(19, 35, 62, 0.9));
+  border: 1px solid rgba(87, 121, 175, 0.48);
   border-radius: 16px;
   padding: 24px;
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto 24px;
 }
 
@@ -31,25 +31,26 @@
   display: grid;
   gap: 8px;
   font-size: 0.9rem;
+  color: #c4d3ea;
 }
 
 .staking-form input,
 .staking-form select {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(123, 64, 146, 0.8);
+  background: rgba(9, 18, 34, 0.8);
+  border: 1px solid rgba(88, 121, 173, 0.55);
   border-radius: 10px;
-  color: #fff;
+  color: #eef4ff;
   padding: 10px 12px;
 }
 
 .staking-preview {
   font-size: 0.95rem;
-  color: #f0d7ff;
+  color: #c8daf8;
 }
 
 .staking-action {
-  background: linear-gradient(90deg, #a84bff, #f546ff);
-  border: none;
+  background: linear-gradient(90deg, #4976b5, #2f5f9d);
+  border: 1px solid rgba(157, 201, 255, 0.5);
   border-radius: 999px;
   color: #fff;
   font-weight: 600;
@@ -67,10 +68,12 @@
   justify-content: center;
   gap: 24px;
   margin-bottom: 24px;
+  flex-wrap: wrap;
 }
 
 .staking-summary div {
-  background: rgba(22, 8, 27, 0.8);
+  background: rgba(14, 26, 48, 0.9);
+  border: 1px solid rgba(87, 121, 175, 0.48);
   border-radius: 12px;
   padding: 12px 20px;
   text-align: center;
@@ -80,16 +83,16 @@
 .staking-summary span {
   display: block;
   font-size: 0.8rem;
-  color: #c4b6d8;
+  color: #b6cae8;
 }
 
 .staking-table {
-  max-width: 920px;
+  max-width: 980px;
   margin: 0 auto;
-  background: rgba(22, 8, 27, 0.8);
+  background: rgba(14, 26, 48, 0.9);
   border-radius: 16px;
   padding: 24px;
-  border: 1px solid rgba(123, 64, 146, 0.8);
+  border: 1px solid rgba(87, 121, 175, 0.48);
 }
 
 .staking-table table {
@@ -101,14 +104,14 @@
 .staking-table td {
   padding: 12px 8px;
   text-align: left;
-  border-bottom: 1px solid rgba(123, 64, 146, 0.4);
+  border-bottom: 1px solid rgba(95, 129, 182, 0.35);
 }
 
 .staking-empty {
   text-align: center;
-  color: #c4b6d8;
+  color: #b6cae8;
 }
 
 .staking-muted {
-  color: #777;
+  color: #8ea0bc;
 }
