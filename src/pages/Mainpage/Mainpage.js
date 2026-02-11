@@ -8,9 +8,11 @@ import Listcoin from "../Listcoin/Listcoin.js"
 import Default from "../Default/Default.js"
 import Levelup from "../Levelup/Levelup.js"
 import Treasury from "../Treasury/Treasury.js"
+import Staking from "../Staking/Staking.js"
 import NavBar from "../../components/NavBar/NavBar.js"
 import Details from "../../pages/Details/Details"
 import PromotePage from "../../pages/PromotePage/PromotePage.js"
+import Governance from "../Governance/Governance.js"
 
 import { WalletProvider } from "../../context"
 
@@ -29,7 +31,9 @@ export const Mainpage = () => {
               <Route exact path="/details/:id" element={<Details />} />
               <Route exact path="/levelup" element={<Levelup />} />
               <Route exact path="/treasury" element={<Treasury />} />
+              <Route exact path="/staking" element={<Staking />} />
               <Route exact path="/promote" element={<PromotePage />} />
+              <Route exact path="/governance" element={<Governance />} />
               {/* Promote page  */}
             </Routes>
           </div>

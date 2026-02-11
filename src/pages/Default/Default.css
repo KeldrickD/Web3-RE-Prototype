@@ -2,13 +2,100 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 24px;
+}
+
+.realEstateHero {
+  margin: 16px auto 0;
+  max-width: 1280px;
+  width: calc(100% - 32px);
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid rgba(123, 64, 146, 0.8);
+  background: linear-gradient(135deg, rgba(14, 6, 20, 0.95), rgba(42, 12, 63, 0.9));
+  color: #fff;
+  display: grid;
+  gap: 24px;
+}
+
+.realEstateHero h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.realEstateHero p {
+  margin: 0;
+  color: #d9c9e8;
+  max-width: 760px;
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.heroStats div {
+  border-radius: 12px;
+  border: 1px solid rgba(173, 105, 218, 0.5);
+  background: rgba(0, 0, 0, 0.25);
+  padding: 12px;
+}
+
+.heroStats span {
+  display: block;
+  color: #d9c9e8;
+  font-size: 0.8rem;
+}
+
+.heroStats strong {
+  font-size: 1.1rem;
 }
 
 .headerImgDiv {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 50px;
+}
+
+.headerImgDiv img {
+  width: 100%;
+  max-width: 1280px;
+  height: 200px;
+}
+
+.opportunitiesGrid {
+  max-width: 1280px;
+  width: calc(100% - 32px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.opportunityCard {
+  border: 1px solid rgba(123, 64, 146, 0.8);
+  border-radius: 14px;
+  background: rgba(20, 8, 29, 0.9);
+  padding: 14px;
+  color: #fff;
+}
+
+.opportunityCard h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.opportunityCard p {
+  margin: 0 0 10px;
+  color: #d9c9e8;
+}
+
+.opportunityMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #8df4d8;
 }
 
 .bannerAreaDiv {
@@ -17,68 +104,26 @@
   text-align: center;
   justify-content: space-between;
 }
-.banner1Div img {
-  width: 100%;
-  height: 100%;
-}
-.banner2Div img {
-  width: 100%;
-  height: 100%;
-}
 
-.banner3Div img {
-  width: 100%;
-  height: 100%;
-}
-
-.headerImgDiv img {
-  width: 100%;
-  height: 200px;
-}
-
-.promotedCoinDiv {
-  margin-bottom: 50px;
-}
-
-.allCoinDiv {
-  margin-bottom: 50px;
-}
-
-@media only screen and (max-width: 800px) {
-  .bannerAreaDiv {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-  }
-  .banner1Div img {
-    width: 250px;
-  }
-  .banner2Div img {
-    width: 250px;
-  }
-  .banner3Div img {
-    width: 250px;
-  }
-}
-
-/* Banner 1 animation */
-.banner1Div {
+.banner1Div,
+.banner2Div,
+.banner3Div {
   position: relative;
   width: 500px;
   height: 200px;
-  /* margin:0 auto; */
 }
 
-.banner1Div img {
+.banner1Div img,
+.banner2Div img,
+.banner3Div img {
   position: absolute;
   left: 0;
-  -webkit-transition: opacity 3s ease-in-out;
-  -moz-transition: opacity 3s ease-in-out;
-  -o-transition: opacity 3s ease-in-out;
+  width: 100%;
+  height: 100%;
   transition: opacity 3s ease-in-out;
 }
 
-@keyframes banner1FadeInOut {
+@keyframes bannerFadeInOut {
   0% {
     opacity: 1;
   }
@@ -93,90 +138,37 @@
   }
 }
 
-.banner1Div img.second {
-  animation-name: banner1FadeInOut;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-direction: alternate;
-}
-
-/* Banner 2 animation */
-.banner2Div {
-  position: relative;
-  width: 500px;
-  height: 200px;
-  /* margin:0 auto; */
-}
-
-.banner2Div img {
-  position: absolute;
-  left: 0;
-  -webkit-transition: opacity 4s ease-in-out;
-  -moz-transition: opacity 4s ease-in-out;
-  -o-transition: opacity 4s ease-in-out;
-  transition: opacity 4s ease-in-out;
-}
-
-@keyframes banner2FadeInOut {
-  0% {
-    opacity: 1;
-  }
-  45% {
-    opacity: 1;
-  }
-  55% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.banner2Div img.second {
-  animation-name: banner2FadeInOut;
+.banner1Div img.second,
+.banner2Div img.second,
+.banner3Div img.second {
+  animation-name: bannerFadeInOut;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-duration: 4s;
   animation-direction: alternate;
 }
 
-/* Banner 3 animation */
-.banner3Div {
-  position: relative;
-  width: 500px;
-  height: 200px;
-  /* margin:0 auto; */
+.promotedCoinDiv,
+.allCoinDiv {
+  margin-bottom: 30px;
 }
 
-.banner3Div img {
-  position: absolute;
-  left: 0;
-  -webkit-transition: opacity 5s ease-in-out;
-  -moz-transition: opacity 5s ease-in-out;
-  -o-transition: opacity 5s ease-in-out;
-  transition: opacity 5s ease-in-out;
-}
+@media only screen and (max-width: 900px) {
+  .heroStats,
+  .opportunitiesGrid {
+    grid-template-columns: 1fr;
+  }
 
-@keyframes banner3FadeInOut {
-  0% {
-    opacity: 1;
+  .bannerAreaDiv {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
-  45% {
-    opacity: 1;
-  }
-  55% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
-.banner3Div img.second {
-  animation-name: banner3FadeInOut;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 5s;
-  animation-direction: alternate;
+  .banner1Div,
+  .banner2Div,
+  .banner3Div {
+    width: 320px;
+    height: 160px;
+  }
 }

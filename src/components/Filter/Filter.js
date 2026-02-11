@@ -21,6 +21,7 @@ import nonwatchlistImg from "../../assets/img/nonwatchlisted.png"
 import axios from "axios"
 import { ENVS } from "../../helpers/configurations"
 import { ethers } from "ethers"
+import { hasMinimumStake } from "../../helpers/staking"
 
 export const Filter = (props) => {
   const [load, setLoaded] = useState(0)
@@ -421,36 +422,38 @@ export const Filter = (props) => {
   }
 
   const voteClicked = async (id) => {
+    if (walletAddress === "") {
+      NotificationManager.error("You have to connect wallet first")
+      return
+    }
+
+    const meetsStake = await hasMinimumStake(walletAddress)
+    if (!meetsStake) {
+      NotificationManager.error(`You need an active stake of ${ENVS.STAKE_MIN_AMOUNT} to vote.`)
+      return
+    }
+
     let dbRef = database.ref("/votelimit")
     let dailyStart = 0
     let dailyCount = 0
     let epochNow = Math.floor(Date.now() / 1000)
     let tempId = ""
-    let ret_val = false
-    dbRef
-      .orderByChild("wallet")
-      .equalTo(walletAddress)
-      .on("value", (snapshot) => {
-        // wallet exists
-        if (snapshot.exists()) {
-          // console.log("wallet exists already in vote limit table");
-          let tempRow = snapshot.val()
+    const snapshot = await dbRef.orderByChild("wallet").equalTo(walletAddress).once("value")
 
-          for (let i in tempRow) {
-            // i = asdfawefawefx  => example
-            tempId = i
-            dailyStart = tempRow[i].dailyStart
-            dailyCount = tempRow[i].dailyCount
-          }
+    if (snapshot.exists()) {
+      let tempRow = snapshot.val()
 
-          console.log(dailyCount, "daily count")
-          if (dailyCount >= 5 && epochNow - dailyStart <= 24 * 60 * 60) {
-            NotificationManager.error("You can only vote 5 times per day.")
-            ret_val = true
-          }
-        }
-      })
-    if (ret_val) return
+      for (let i in tempRow) {
+        tempId = i
+        dailyStart = tempRow[i].dailyStart
+        dailyCount = tempRow[i].dailyCount
+      }
+
+      if (dailyCount >= 5 && epochNow - dailyStart <= 24 * 60 * 60) {
+        NotificationManager.error("You can only vote 5 times per day.")
+        return
+      }
+    }
     const infuraProvider = new ethers.providers.Web3Provider(window.ethereum)
     const signer = infuraProvider.getSigner()
 

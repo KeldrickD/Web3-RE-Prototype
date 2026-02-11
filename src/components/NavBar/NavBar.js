@@ -72,8 +72,16 @@ export const NavBar = () => {
     navigate("/levelup", { replace: true })
   }
 
+  const stakingBtnClicked = () => {
+    navigate("/staking", { replace: true })
+  }
+
   const treasuryBtnClicked = () => {
     navigate("/treasury", { replace: true })
+  }
+
+  const governanceBtnClicked = () => {
+    navigate("/governance", { replace: true })
   }
 
   const renderWalletButton = () => {
@@ -174,8 +182,12 @@ export const NavBar = () => {
         <button id="treasuryBtn" onClick={treasuryBtnClicked}>
           Buy Back Treasury
         </button>
-        <button id="lotteryBtn">Lottery</button>
-        <button id="stakingBtn">Staking</button>
+        <button id="lotteryBtn" onClick={governanceBtnClicked}>
+          Governance
+        </button>
+        <button id="stakingBtn" onClick={stakingBtnClicked}>
+          Staking
+        </button>
         <button id="levelUpBtn" onClick={levelUpBtnClicked}>
           Level Up
         </button>

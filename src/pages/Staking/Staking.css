@@ -1,0 +1,114 @@
+.staking-page {
+  color: #fff;
+  padding: 32px 24px 64px;
+}
+
+.staking-hero {
+  max-width: 720px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.staking-hero h2 {
+  margin-bottom: 8px;
+}
+
+.staking-card {
+  background: rgba(22, 8, 27, 0.8);
+  border: 1px solid rgba(123, 64, 146, 0.8);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 720px;
+  margin: 0 auto 24px;
+}
+
+.staking-form {
+  display: grid;
+  gap: 16px;
+}
+
+.staking-form label {
+  display: grid;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.staking-form input,
+.staking-form select {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(123, 64, 146, 0.8);
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px 12px;
+}
+
+.staking-preview {
+  font-size: 0.95rem;
+  color: #f0d7ff;
+}
+
+.staking-action {
+  background: linear-gradient(90deg, #a84bff, #f546ff);
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.staking-action.small {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+.staking-summary {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.staking-summary div {
+  background: rgba(22, 8, 27, 0.8);
+  border-radius: 12px;
+  padding: 12px 20px;
+  text-align: center;
+  min-width: 160px;
+}
+
+.staking-summary span {
+  display: block;
+  font-size: 0.8rem;
+  color: #c4b6d8;
+}
+
+.staking-table {
+  max-width: 920px;
+  margin: 0 auto;
+  background: rgba(22, 8, 27, 0.8);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(123, 64, 146, 0.8);
+}
+
+.staking-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.staking-table th,
+.staking-table td {
+  padding: 12px 8px;
+  text-align: left;
+  border-bottom: 1px solid rgba(123, 64, 146, 0.4);
+}
+
+.staking-empty {
+  text-align: center;
+  color: #c4b6d8;
+}
+
+.staking-muted {
+  color: #777;
+}
