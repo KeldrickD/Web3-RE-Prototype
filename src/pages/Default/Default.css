@@ -2,13 +2,107 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 24px;
+}
+
+.realEstateHero {
+  margin: 12px auto 0;
+  max-width: 1280px;
+  width: calc(100% - 24px);
+  border-radius: 18px;
+  padding: 30px;
+  border: 1px solid rgba(88, 124, 181, 0.45);
+  background:
+    linear-gradient(120deg, rgba(16, 31, 56, 0.95), rgba(21, 43, 73, 0.94)),
+    url("../../assets/img/bg.png");
+  background-size: cover;
+  color: #f2f6fd;
+  display: grid;
+  gap: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.realEstateHero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.65rem, 2.2vw, 2.35rem);
+}
+
+.realEstateHero p {
+  margin: 0;
+  color: #bdd0ea;
+  max-width: 780px;
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.heroStats div {
+  border-radius: 12px;
+  border: 1px solid rgba(106, 145, 201, 0.45);
+  background: rgba(15, 29, 50, 0.72);
+  padding: 12px;
+}
+
+.heroStats span {
+  display: block;
+  color: #afc4e4;
+  font-size: 0.8rem;
+}
+
+.heroStats strong {
+  font-size: 1.1rem;
 }
 
 .headerImgDiv {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 50px;
+}
+
+.headerImgDiv img {
+  width: 100%;
+  max-width: 1280px;
+  border-radius: 14px;
+  border: 1px solid rgba(84, 118, 171, 0.45);
+  height: 190px;
+  object-fit: cover;
+}
+
+.opportunitiesGrid {
+  max-width: 1280px;
+  width: calc(100% - 24px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.opportunityCard {
+  border: 1px solid rgba(87, 122, 178, 0.5);
+  border-radius: 14px;
+  background: linear-gradient(150deg, rgba(16, 30, 55, 0.92), rgba(21, 39, 69, 0.9));
+  padding: 14px;
+  color: #f6f9ff;
+}
+
+.opportunityCard h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.opportunityCard p {
+  margin: 0 0 10px;
+  color: #aec3e3;
+}
+
+.opportunityMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #74e2be;
 }
 
 .bannerAreaDiv {
@@ -16,167 +110,67 @@
   flex-direction: row;
   text-align: center;
   justify-content: space-between;
-}
-.banner1Div img {
-  width: 100%;
-  height: 100%;
-}
-.banner2Div img {
-  width: 100%;
-  height: 100%;
+  gap: 12px;
 }
 
-.banner3Div img {
-  width: 100%;
-  height: 100%;
-}
-
-.headerImgDiv img {
-  width: 100%;
-  height: 200px;
-}
-
-.promotedCoinDiv {
-  margin-bottom: 50px;
-}
-
-.allCoinDiv {
-  margin-bottom: 50px;
-}
-
-@media only screen and (max-width: 800px) {
-  .bannerAreaDiv {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-  }
-  .banner1Div img {
-    width: 250px;
-  }
-  .banner2Div img {
-    width: 250px;
-  }
-  .banner3Div img {
-    width: 250px;
-  }
-}
-
-/* Banner 1 animation */
-.banner1Div {
-  position: relative;
-  width: 500px;
-  height: 200px;
-  /* margin:0 auto; */
-}
-
-.banner1Div img {
-  position: absolute;
-  left: 0;
-  -webkit-transition: opacity 3s ease-in-out;
-  -moz-transition: opacity 3s ease-in-out;
-  -o-transition: opacity 3s ease-in-out;
-  transition: opacity 3s ease-in-out;
-}
-
-@keyframes banner1FadeInOut {
-  0% {
-    opacity: 1;
-  }
-  45% {
-    opacity: 1;
-  }
-  55% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.banner1Div img.second {
-  animation-name: banner1FadeInOut;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-direction: alternate;
-}
-
-/* Banner 2 animation */
-.banner2Div {
-  position: relative;
-  width: 500px;
-  height: 200px;
-  /* margin:0 auto; */
-}
-
-.banner2Div img {
-  position: absolute;
-  left: 0;
-  -webkit-transition: opacity 4s ease-in-out;
-  -moz-transition: opacity 4s ease-in-out;
-  -o-transition: opacity 4s ease-in-out;
-  transition: opacity 4s ease-in-out;
-}
-
-@keyframes banner2FadeInOut {
-  0% {
-    opacity: 1;
-  }
-  45% {
-    opacity: 1;
-  }
-  55% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.banner2Div img.second {
-  animation-name: banner2FadeInOut;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 4s;
-  animation-direction: alternate;
-}
-
-/* Banner 3 animation */
+.banner1Div,
+.banner2Div,
 .banner3Div {
   position: relative;
   width: 500px;
   height: 200px;
-  /* margin:0 auto; */
 }
 
+.banner1Div img,
+.banner2Div img,
 .banner3Div img {
   position: absolute;
   left: 0;
-  -webkit-transition: opacity 5s ease-in-out;
-  -moz-transition: opacity 5s ease-in-out;
-  -o-transition: opacity 5s ease-in-out;
-  transition: opacity 5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(91, 124, 178, 0.45);
+  transition: opacity 3s ease-in-out;
 }
 
-@keyframes banner3FadeInOut {
-  0% {
-    opacity: 1;
-  }
+@keyframes bannerFadeInOut {
+  0%,
   45% {
     opacity: 1;
   }
-  55% {
-    opacity: 0;
-  }
+  55%,
   100% {
     opacity: 0;
   }
 }
 
+.banner1Div img.second,
+.banner2Div img.second,
 .banner3Div img.second {
-  animation-name: banner3FadeInOut;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 5s;
-  animation-direction: alternate;
+  animation: bannerFadeInOut 4s ease-in-out infinite alternate;
+}
+
+.promotedCoinDiv,
+.allCoinDiv {
+  margin-bottom: 24px;
+}
+
+@media only screen and (max-width: 900px) {
+  .heroStats,
+  .opportunitiesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bannerAreaDiv {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .banner1Div,
+  .banner2Div,
+  .banner3Div {
+    width: 320px;
+    height: 160px;
+  }
 }
