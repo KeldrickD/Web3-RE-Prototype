@@ -72,8 +72,16 @@ export const NavBar = () => {
     navigate("/levelup", { replace: true })
   }
 
+  const stakingBtnClicked = () => {
+    navigate("/staking", { replace: true })
+  }
+
   const treasuryBtnClicked = () => {
     navigate("/treasury", { replace: true })
+  }
+
+  const governanceBtnClicked = () => {
+    navigate("/governance", { replace: true })
   }
 
   const renderWalletButton = () => {
@@ -160,7 +168,7 @@ export const NavBar = () => {
       </div>
 
       <div className="btnArea">
-        <button id="cryptocurrenciesBtn">Cryptocurrencies</button>
+        <button id="cryptocurrenciesBtn">Properties</button>
         <select
           id="selectTools"
           className="selectTools"
@@ -172,12 +180,16 @@ export const NavBar = () => {
         </select>
 
         <button id="treasuryBtn" onClick={treasuryBtnClicked}>
-          Buy Back Treasury
+          Partner Campaigns
         </button>
-        <button id="lotteryBtn">Lottery</button>
-        <button id="stakingBtn">Staking</button>
+        <button id="lotteryBtn" onClick={governanceBtnClicked}>
+          Governance
+        </button>
+        <button id="stakingBtn" onClick={stakingBtnClicked}>
+          Staking
+        </button>
         <button id="levelUpBtn" onClick={levelUpBtnClicked}>
-          Level Up
+          Portfolio Hub
         </button>
       </div>
     </div>
